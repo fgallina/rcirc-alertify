@@ -26,7 +26,8 @@ As an additional step, don't forget to configure alert.el to use your
 preferred notification system.  In my case that is `libnotify`:
 
 ```emacslisp
-(setq alert-default-style 'libnotify)```
+(setq alert-default-style 'libnotify)
+```
 
 ## Introduction
 
