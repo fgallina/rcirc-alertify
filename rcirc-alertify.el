@@ -151,7 +151,6 @@ checks as it populates `rcirc-alertify--timeout-alist', see
 This function is called from the `rcirc-print-functions' so
 arguments PROC, SENDER, RESPONSE, TARGET and TEXT are inherited
 from that.  Returns non-nil if a notification has been sent."
-  (interactive)
   (when (and rcirc-alertify-keywords-p
              rcirc-keywords
              (string-match
@@ -168,7 +167,6 @@ from that.  Returns non-nil if a notification has been sent."
 This function is called from the `rcirc-print-functions' so
 arguments PROC, SENDER, RESPONSE, TARGET and TEXT are inherited
 from that.  Returns non-nil if a notification has been sent."
-  (interactive)
   (when (and (string-match (rcirc-nick proc) text)
              (rcirc-alertify-p proc sender response target text :me))
     (alert
@@ -183,7 +181,6 @@ This function is intended to be added into the
 `rcirc-print-functions' so arguments PROC, SENDER, RESPONSE,
 TARGET and TEXT are inherited from that.  Returns non-nil if a
 notification has been sent."
-  (interactive)
   (when (and (string= response "PRIVMSG")
              (not (string= sender (rcirc-nick proc)))
              (not (rcirc-channel-p target))
